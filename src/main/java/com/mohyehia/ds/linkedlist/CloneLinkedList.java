@@ -1,6 +1,6 @@
 package com.mohyehia.ds.linkedlist;
 
-public class ClineLinkedList {
+public class CloneLinkedList {
     static class Node {
         int val;
         Node next;
@@ -19,6 +19,10 @@ public class ClineLinkedList {
         }
     }
 
+    /*
+    Clone linkedList
+    https://www.techiedelight.com/clone-given-linked-list/
+     */
     @SuppressWarnings("unused")
     static Node clone(Node head) {
         if (head == null)
@@ -44,9 +48,21 @@ public class ClineLinkedList {
         return node;
     }
 
+    /*
+    Pop operation in linkedList
+    https://www.techiedelight.com/pop-operation-in-linked-list/
+     */
+    static Node pop(Node head){
+        if(head == null)
+            return null;
+        System.out.println(head.val);
+        head = head.next;
+        return head;
+    }
+
     public static void main(String[] args) {
         // input keys
-        int[] keys = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] keys = {1, 2, 3, 4, 5};
         // points to the head node of the linked list
         Node head = null;
         // construct linked list
@@ -57,5 +73,9 @@ public class ClineLinkedList {
         Node copy = recursiveClone(head);
         // print duplicate linked list
         print(copy);
+        // pop the first element
+        System.out.println("Removing the first element");
+        head = pop(head);
+        print(head);
     }
 }
